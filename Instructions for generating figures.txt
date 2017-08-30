@@ -1,0 +1,19 @@
+INSTRUCTIONS FOR GENERATING FIGURES
+--------------------------------------
+
+1) Add the contents of this folder to the Matlab path
+	(MATLAB command: addpath(genpath(<Path to downloaded MATLAB Folder>) )
+	
+	
+2) In MATLAB, change the "Current Folder" to the location of the downloaded "Data" folder. The current folder should show several folder names such as "WL08", "w322", "CAN12", etc. The code will not execute properly unless the current folder is correct.
+	(MATLAB command: cd(<Path to downloaded data folder>) )
+
+	
+Ganerating the main figures:
+3a) To generate the main figures, run the MATLAB script "FiguresCreate.m", which can be found in this folder.
+	(MATLAB command: FiguresCreate)
+	
+
+Generating the supplementary figures:
+3b) To generate supplementary figures, run MATLAB script "Supplementary_Figures_Create.m" which can also be found in this folder.
+	(MATLAB command: Supplementary_Figures_Create)
