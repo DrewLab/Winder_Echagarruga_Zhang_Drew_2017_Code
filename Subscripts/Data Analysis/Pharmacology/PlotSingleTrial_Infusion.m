@@ -74,17 +74,19 @@ for fil = 1:length(filenames);
         ones(length(ProcData.Sol.Tail),1)*Sol_cmap_numeric(3,:);...
         ones(length(ProcData.Sol.Control),1)*Sol_cmap_numeric(4,:)];
     
+    % Invert the whisker angle trace for plotting
+    WhiskAngle = -1*ProcData.Beh.wwf;
+    
     % Set y-values of scatter points
-    sol_y = max(ProcData.Beh.wwf);
-    whisk_y = max(ProcData.Beh.wwf)+5;
-    move_y = max(ProcData.Beh.wwf)+10;
+    sol_y = max(WhiskAngle);
+    whisk_y = max(WhiskAngle)+5;
+    move_y = max(WhiskAngle)+10;
     
     % Identify locations of detected whisks and movements
     whisktimes = find(ProcData.Beh.Bin_wwf)/Whisk_Fs;
     movetimes = find(ProcData.Beh.Bin_pswf)/PS_Fs;
     
     % Whisker Position, overlay solenoid puff times
-    WhiskAngle = ProcData.Beh.wwf;
     subplot(411);
     scatter(Sol_times,sol_y*ones(1,length(Sol_times)),50,cmap,'filled','v');
     hold on;

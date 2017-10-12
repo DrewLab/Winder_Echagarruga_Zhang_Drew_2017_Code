@@ -1,12 +1,23 @@
+INSTRUCTIONS FOR DOWNLOADING DATA
+--------------------------------------
+The data are included in 2 separate zipped folders in order to conform the file size policy of Box.com. Download and extract the .zip files titled:
+
+"Dataset1_Winder_Echagarruga_Zhang_Drew_2017" "Dataset2_Winder_Echagarruga_Zhang_Drew_2017" 
+
+Move the contents of each extracted folder to the same location.
+
 INSTRUCTIONS FOR GENERATING FIGURES
 --------------------------------------
 
-1) Add the contents of this folder to the Matlab path
-	(MATLAB command: addpath(genpath(<Path to downloaded MATLAB Folder>) )
-	
-	
-2) In MATLAB, change the "Current Folder" to the location of the downloaded "Data" folder. The current folder should show several folder names such as "WL08", "w322", "CAN12", etc. The code will not execute properly unless the current folder is correct.
-	(MATLAB command: cd(<Path to downloaded data folder>) )
+1) Download and extract the zip folder titled:
+
+"MATLABcode_Winder_Echagarruga_Zhang_Drew_2017"
+
+2) Add the contents of the folder containing the extracted MATLAB code to the MATLAB path
+	(MATLAB command: addpath(genpath(<Path to extracted code>) )
+		
+3) In MATLAB, change the "Current Folder" to the location where you moved the extracted data. The "Current Folder" should show several sub-folder names such as "WL08", "w322", "CAN12", etc. The code will not execute properly unless the current folder is correct.
+	(MATLAB command: cd(<Location of all extracted data>) )
 
 	
 Ganerating the main figures:
@@ -17,3 +28,21 @@ Ganerating the main figures:
 Generating the supplementary figures:
 3b) To generate supplementary figures, run MATLAB script "Supplementary_Figures_Create.m" which can also be found in this folder.
 	(MATLAB command: Supplementary_Figures_Create)
+
+*** An important note: Subplots of some figures are populated between analysis. Clicking on figure windows while the figures are generating may scramble the contents of the figures and give unexpected results. Therefore, it is recommended that you wait until the code finishes running before interacting with the figures.
+
+INFORMATION ABOUT THE INCLUDED DATA
+---------------------------------------
+The included files contain data which are in a preprocessed form. The files containing the raw measurements comprise >1 TB of memory and require extensive processing time (>24 hours). The raw files are available upon request and the required scripts are included in the downloaded MATLAB code. All filenames of preprocessed data are accompanied by a tag which indicates their contents. The following is a key for understanding the sources of these files:
+
+*_ProcData.mat - Structures containing the processed data measurements for individual trials(See Online Methods within the paper). Neural power, ROI intensity, and behavioral measurements are included in these files. These are generated from raw measurements using the script "ProcessRawDataFile_V1" or "ProcessRawDataFile_InfusionTrials"
+
+*_RESTDATA_*.mat - Structures containing data from *_ProcData.mat files (of some type, ie: Gam-Gamma, MUpower-MUA, etc.) for all periods where the animal was not moving. These structures are obtained from the *_ProcData.mat files and the script "SingleAnimalProcessingMaster.m"
+
+*_EVENTDATA_*.mat - Structures containing data from *_ProcData.mat files, but separated according to sensory evoked and volitional behaviors. These structures are obtained from the *_ProcData.mat files and the script "SingleAnimalProcessingMaster.m"
+
+*_Thresholds.mat - Structures containing the thresholds used to categorize behavior. These are created during the data processing and are not altered.
+
+*_Baselines.mat - Structures containing the data used to calculate the baselines used for normalization. These are created during the data processing step and are not altered.
+
+*_Specgram.mat - Structures containing the spectrogram of the raw neural data for a single trial. This is created during the data processing step by "ProcessNeuro.m" (See Online Methods).

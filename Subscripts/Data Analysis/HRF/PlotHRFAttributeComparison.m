@@ -1,15 +1,15 @@
 function [] = PlotHRFAttributeComparison(HRFatt,testfields,const_field)
-%   function [] =  ()
+%   [] = PlotHRFAttributeComparison(HRFatt,testfields,const_field)
 %
 %   Author: Aaron Winder
 %   Affiliation: Engineering Science and Mechanics, Penn State University
 %   https://github.com/awinde
 %
-%   DESCRIPTION: 
+%   DESCRIPTION: Creates boxplots of the HRF attributes.
 %   
 %_______________________________________________________________
 %   PARAMETERS:             
-%                               
+%               HRFatt - [matrix] contains the attributes                    
 %_______________________________________________________________
 %   RETURN:                     
 %                               
