@@ -31,6 +31,8 @@ Generating the supplementary figures:
 
 *** An important note: Subplots of some figures are populated between analysis. Clicking on figure windows while the figures are generating may scramble the contents of the figures and give unexpected results. Therefore, it is recommended that you wait until the code finishes running before interacting with the figures.
 
+*** This code has been tested on Windows 7/10 operating systems and MATLAB versions 2015a/2016a and compatibility with other operating systems or future MATLAB versions has not been verified.
+
 INFORMATION ABOUT THE INCLUDED DATA
 ---------------------------------------
 The included files contain data which are in a preprocessed form. The files containing the raw measurements comprise >1 TB of memory and require extensive processing time (>24 hours). The raw files are available upon request and the required scripts are included in the downloaded MATLAB code. All filenames of preprocessed data are accompanied by a tag which indicates their contents. The following is a key for understanding the sources of these files:
